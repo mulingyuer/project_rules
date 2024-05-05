@@ -11,7 +11,8 @@
 		"type-check": "vue-tsc --build --force",
 		"lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
 		"format": "prettier --write src/",
-		"prepare": "husky"
+		"prepare": "husky",
+		"lint-staged": "lint-staged"
 	},
 	"dependencies": {
 		"pinia": "^2.1.7",
@@ -38,9 +39,7 @@
 		"vue-tsc": "^2.0.11"
 	},
 	"lint-staged": {
-		"src/**/*.{js,jsx,ts,tsx,md,html,css,scss,json}": [
-			"prettier --write --ignore-unknown"
-		],
+		"*": "prettier --write --ignore-unknown",
 		"src/**/*.{ts,tsx,vue}": [
 			"eslint"
 		]
