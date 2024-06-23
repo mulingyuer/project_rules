@@ -13,6 +13,14 @@ module.exports = {
 		ecmaVersion: "latest"
 	},
 	rules: {
-		"no-unused-vars": "error"
+		"vue/multi-word-component-names": "off", // 关闭vue组件命名规则，允许使用单个单词组件名
+		"no-unused-vars": "off", // 关闭未使用变量警告，因为tslint会处理它
+		"@typescript-eslint/no-unused-vars": [
+			"error",
+			{
+				argsIgnorePattern: "^_",
+				varsIgnorePattern: "^_"
+			}
+		]
 	}
 };
